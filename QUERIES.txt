@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE DATABASE company;
 USE company;
 CREATE TABLE Employee (
@@ -50,4 +51,58 @@ WHERE EName LIKE '__A%';
 
 SELECT EName
 FROM Employee
+=======
+CREATE DATABASE company;
+USE company;
+CREATE TABLE Employee (
+    EmpNo INT PRIMARY KEY AUTO_INCREMENT,
+    EName VARCHAR(50),
+    Job VARCHAR(50),
+    Sal DECIMAL(10,2),
+    Comm DECIMAL(10,2),
+    Mgr INT
+);
+
+
+INSERT INTO Employee (EName, Job, Sal, Comm, Mgr) VALUES
+('SMITH', 'CLERK', 2000, NULL, 7902),
+('ALLEN', 'SALESMAN', 3000, 500, 7698),
+('WARD', 'SALESMAN', 2500, NULL, 7698),
+('JONES', 'MANAGER', 4200, NULL, NULL),
+('MARTIN', 'SALESMAN', 2800, 300, 7698),
+('SCOTT', 'ANALYST', 3500, NULL, 7566),
+('KING', 'PRESIDENT', 5000, NULL, NULL);
+
+
+SELECT EName, Sal
+FROM Employee
+WHERE Sal >= 2200;
+
+
+SELECT *
+FROM Employee
+WHERE Comm IS NULL OR Comm = 0;
+
+
+SELECT EName, Sal
+FROM Employee
+WHERE Sal NOT BETWEEN 2500 AND 4000;
+
+
+SELECT EName, Job, Sal
+FROM Employee
+WHERE Mgr IS NULL;
+
+
+SELECT EName, Sal
+FROM Employee
+WHERE Sal NOT BETWEEN 2500 AND 4000;
+
+SELECT EName
+FROM Employee
+WHERE EName LIKE '__A%';
+
+SELECT EName
+FROM Employee
+>>>>>>> 3c6dd03790c95ad80c6968b040e968c8bc1863b4
 WHERE EName LIKE '%T';
